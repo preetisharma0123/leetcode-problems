@@ -1,10 +1,10 @@
-```#Problem No.:705
-#Problem : Design a HashSet without using any built-in hash table libraries.
-#DS : LinkedList
-#Approach: LinkedList as Bucket
-#Explained : In the Python implementation, we employed a sort of pseudo head to keep a reference to the actual head of the LinkedList, which could simplify a bit the logic by reducing the number of branchings.
-#Date : 14/06/2023
-```
+"""Problem No.:705
+Problem: Design a HashSet without using any built-in hash table libraries.
+DS: LinkedList
+Approach: LinkedList as Bucket
+Explained: In the Python implementation, we employed a sort of pseudo head to keep a reference to the actual head of the LinkedList, which could simplify a bit the logic by reducing the number of branchings.
+Date: 14/06/2023
+"""
 
 class Node:
     def __init__(self, val= None):
