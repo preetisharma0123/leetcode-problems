@@ -26,16 +26,31 @@ Output: [["a"]]
  """
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        
+        #let's create a dictionary
         magic_dict = {}
+
+        # we iterate through each string in strs
         for i in range(len(strs)):
-            
-            key = tuple(sorted(strs[i]))
+            # for each string we create a list called as count
+            count = [0]*26
+            # for each character in the string we find the ASCII value and assign it to an index and increment it by one for each count
+            for char in strs[i]:
+                count[ord(char)-ord("a")] += 1
+            # once we finalize the count list, we change it to string by adding a delimiter after each number. this is required to eliminate any chance of error.
+            key = "#".join(map(str,count)) 
+
+            # we are using the map function here, as the count list has numbers and not strings
+        
+            # finally we see if the key we got from each string is there in the dictionary or not. If it is there, we add the value to the value list. If not we add the key, value pair to the dictionary
             if key not in magic_dict:
                 magic_dict[key] = [strs[i]]
             else:
                 magic_dict[key].append(strs[i])
 
         return magic_dict.values()
+
+
 
 
 
