@@ -57,6 +57,6 @@ class TwoSum:
 
 
 """
-Time Complexity: O(N⋅log⁡(N))
+Time Complexity: O(n)
 Space Complexity: O(n)
 """
