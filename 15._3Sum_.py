@@ -57,6 +57,7 @@ class Solution:
                 
                
 """
-Time Complexity:O(n)
-Space Complexity: O(1)
+Time Complexity:O(n*2). twoSum is O(n), and we call it n times.
+Sorting the array takes O(nlog⁡n), so overall complexity is O(nlog⁡n+n2). This is asymptotically equivalent to O(n2)
+Space Complexity: O(n) for the hashset.
 """
