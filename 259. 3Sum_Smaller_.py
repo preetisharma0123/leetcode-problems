@@ -23,33 +23,29 @@ Input: nums = [0], target = 0
 Output: 0
 """
 class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]: 
-        result = []
+    def threeSumSmaller(self, nums: List[int], target: int) -> int:
+        result =0
         nums.sort()
-        for i in range(len(nums)):
-            if nums[i]>0:
-                break
-            if i ==0 or nums[i-1] != nums[i]:
-                self.twoSum(nums,i,result)
-        return result
 
+        if len(nums) <3:
+            return 0
+        for i in range(len(nums)-2):
+            result +=self.twoSum(nums,i,target-nums[i])
+        return result
     
-    def twoSum(self,nums, i,result):
+    def twoSum(self,nums, i,target):
         low = i+1
         high = len(nums)-1
-        while (low <high):
-            sum = nums[i]+nums[low]+nums[high]
-            if sum>0:
-                high -=1               
-            elif sum<0:
+        result =0
+        while low<high:
+            sum1 = nums[low]+nums[high]
+            if sum1<target:
+                result += (high - low)
                 low +=1
-            else: 
-                result.append([nums[i],nums[low],nums[high]])
-                low +=1
-                high -=1
-                while (low<high )and nums[low]== nums[low-1]:
-                    low +=1
-                
+            else:
+                high -= 1
+        return result
+       
                
 """
 Time Complexity:O(n*2).
